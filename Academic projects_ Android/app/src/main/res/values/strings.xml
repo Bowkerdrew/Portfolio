@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GoogleInfo</string>
+    <string name="title_item_detail">Google Information</string>
+    <string name="txtInfo">Google Inc. is an American multinational technology company specializing in Internet-related services and products.</string>
+    <string name="txtHQ">This is an image of the Google global headquarters in Mountain View, California.</string>
+    <string name="txtDescription">Google headquarters Image</string>
+    <string name="txtTitle">About Google</string>
+    <string name="txtAndroidImg">Image of Android Logo</string>
+    <string name="txtAndroid">Android is the mobile operating system developed and maintained by Google.</string>
+</resources>
