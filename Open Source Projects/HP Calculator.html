@@ -1,0 +1,80 @@
+<style>
+ul#rolls li {
+    display:inline;
+}
+#rcorners {
+    border-radius: 25px;
+    border: 2px solid #99AAAA;
+    padding: 20px; 
+    width: 250px;
+    height: 200px;    
+}
+input::placeholder {
+  color: grey;
+}
+p {
+    text-align: left;
+    text-transform: uppercase;
+    color: #99AAAA;
+    letter-spacing: -1px;
+    text-shadow: 1px 1px #99BBAA;
+}
+.button {
+    background-color: #99AAAA; /* Green */
+    border: none;
+    color: White;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.button:hover {
+    background-color: #99BBAA;
+    color: white;
+}
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #99AAAA;
+    color: white;
+}
+input[type=text]:hover {
+    width: 60%;
+    background-color:#99BBAA
+}
+
+</style>
+<div id = "rcorners" align = "left">
+<div class="container">
+  <p><input type="radio" name="hit dice" value="6" id="seg-D6" >
+  <label for="seg-D6" >D6</label>
+  <input type="radio" name="hit dice" value="8" id="seg-D8" checked>
+  <label for="seg-D8">D8</label>
+  <input type="radio" name="hit dice" value="10" id="seg-D10" >
+  <label for="seg-D10">D10</label>
+  <input type="radio" name="hit dice" value="12" id="seg-D10">
+  <label for="seg-D12" class="last">D12</label>
+</div></p>
+<input type="text" id="count" placeholder="level"></input>
+
+<input type="text" id="con" placeholder="Con Modifier"></input><br>
+<button class="button" onclick = "calc()">Submit</button><br>
+<p>Result: 
+<text id = "result" ></text></font><br></p>
+</div>
+<script>
+//Written by Ordo
+var level = 0; var con = 0; var res = 0;
+function calc(){
+	level = parseInt(document.getElementById("count").value, 10);
+	con = parseInt(document.getElementById("con").value, 10);
+    hd = parseInt(document.querySelector('input[name="hit dice"]:checked').value, 10);
+    res = (hd+con)+(level-1)*(hd/2+1+con);
+    document.getElementById("result").innerHTML = res + " ❤";
+}
+
+</script>

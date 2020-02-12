@@ -1,0 +1,94 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Diplomata|Diplomata+SC|Nova+Slim');
+body {
+  margin: 0;
+  padding: 0;
+  height: calc(100vh - 86px);
+  background: linear-gradient(to right, rgb(20, 30, 48), rgb(36, 59, 85));
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+ul li {
+  color: white;
+  list-style: none;
+  font-size: 6em;
+  letter-spacing: 10px;
+  font-weight: bold;
+  text-shadow: 1px 15px 16px #00000042;
+  -webkit-text-stroke: 1px #000000;
+}
+ul li {
+	font-family: 'Nova Slim', cursive;
+  color: black;
+}
+
+ul li {
+  animation: animate 2s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg) translateY(0px);
+    opacity: 1;
+    filter: blur(1px);
+  }
+
+  100% {
+    transform: rotate(15deg) translateY(-200px);
+    opacity: 0;
+    filter: blur(20px);
+    color: white;
+  }
+}
+
+ul li:nth-child(1) {
+  animation-delay: 2s;
+}
+
+ul li:nth-child(2) {
+  animation-delay: 2.4s;
+}
+
+ul li:nth-child(3) {
+  animation-delay: 2.8s;
+}
+
+ul li:nth-child(4) {
+  animation-delay: 3.2s;
+}
+
+ul li:nth-child(5) {
+  animation-delay: 3.6s;
+}
+ul li:nth-child(6){
+  animation-delay: 3.8s;
+}
+ul li:nth-child(7){
+  animation-delay: 4.0s;
+}
+</style>
+
+
+
+<div class="center">
+  <ul>
+    <li>E</li>
+    <li>X</li>
+     <li>A</li>
+     <li>M</li>
+     <li>P</li>
+     <li>L</li>
+    <li>E</li>
+  </ul>
+</div>

@@ -1,0 +1,66 @@
+<style>
+ul#rolls li {
+    display:inline;
+}
+</style>
+<div align = "left"><div style="float: left; margin: 2px;"><font size = "40">🎲</font></div>Number of dice:<br>
+<input type="text" id="count"></input>
+<select id = "sides">
+<option value = "2">d2</option>
+<option value = "4">d4</option>
+<option value = "6">d6</option>
+<option value = "10">d10</option>
+<option value = "12">d12</option>
+<option value = "20">d20</option>
+<option value = "100">d%</option>
+</select>
+<button onclick = "rolldice()">Submit</button><br>
+Result: 
+<div style="overflow-y: scroll; height:150px; width: 400px"><ul id="rolls">
+</ul> </div>
+<font size = "4"><text id = "result" ></text></font>
+</div>
+<script>
+//Written by Ordo
+var dicecount
+var roll = 0;
+var rollStr = " ";
+var rollStrOut = " ";
+var side;
+function rolldice()
+{
+
+	side = document.getElementById("sides").value
+    document.getElementById("rolls").innerHTML = " "
+    
+	dicecount = document.getElementById("count").value
+	for(i = 0; i < dicecount; i++)
+	{
+		var dice= Math.floor(Math.random() * (side)+1);
+		roll = roll + dice;
+        rollStr = dice.toString();
+        if(i != dicecount-1){
+        	if(dice == 1)
+        		document.getElementById("rolls").innerHTML += "<li>" + "<font color=red >" + rollStr + "</font>" + " + " + "</li>";
+            else if(dice == side)
+            	document.getElementById("rolls").innerHTML += "<li>" + "<font color=green >" + rollStr + "</font>" + " + " + "</li>";
+           else
+           		document.getElementById("rolls").innerHTML += "<li>"+ rollStr +" + " + "</li>";
+           
+        	
+        }
+        
+        else{
+        	if(dice == 1)
+        		document.getElementById("rolls").innerHTML += "<li>" + "<font color=red >" + rollStr + "</font>" +  "</li>";
+            else if(dice == side)
+            	document.getElementById("rolls").innerHTML += "<li>" + "<font color=green >" + rollStr + "</font>" +  "</li>";
+           else
+           		document.getElementById("rolls").innerHTML += "<li>"+ rollStr + "</li>";
+        }
+        
+	}
+	document.getElementById("result").innerHTML = "Total: " + roll;
+    roll = 0;
+}
+</script>
